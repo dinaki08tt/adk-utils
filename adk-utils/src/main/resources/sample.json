@@ -1,0 +1,15 @@
+{
+ "WorkFlow":{
+ "wfRules":{
+ "ORGET":{
+ 	"ParamVal":"19",
+ 	"ExtendedParamVal": "20"
+ },
+ "GT":{
+ "ParamVal":"19",
+ 	"ExtendedParamVal": "20"
+ }
+ },
+ "error":null
+ }
+}
