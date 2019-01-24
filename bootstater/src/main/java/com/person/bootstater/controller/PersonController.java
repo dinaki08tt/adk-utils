@@ -58,4 +58,10 @@ public class PersonController {
 		return true;
 	}
 	
+	@GetMapping("/persons/del")
+	public List<Person> findPersonDeleted() {
+		List<Person> persons = personRespository.findByIsRecordActive("N");
+		return persons;
+	}
+	
 }
