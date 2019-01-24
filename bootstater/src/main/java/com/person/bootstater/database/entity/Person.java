@@ -1,13 +1,19 @@
 package com.person.bootstater.database.entity;
 
 import java.time.LocalDateTime;
-import java.time.LocalTime;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.PreRemove;
+
+import org.hibernate.annotations.ResultCheckStyle;
+import org.hibernate.annotations.SQLDelete;
+import org.hibernate.annotations.Where;
 
 @Entity
+@SQLDelete(sql = "UPDATE Person SET is_Record_Active = 'N' WHERE id = ?", check = ResultCheckStyle.COUNT)
+@Where(clause = "is_Record_Active <> 'N'")
 public class Person {
 	@Id
 	@GeneratedValue
@@ -15,6 +21,8 @@ public class Person {
 	private String name;
 	private String lastName;
 	private LocalDateTime dob;
+	private String isRecordActive;
+	
 	public Integer getId() {
 		return id;
 	}
@@ -38,6 +46,13 @@ public class Person {
 	}
 	public void setDob(LocalDateTime localDateTime) {
 		this.dob = localDateTime;
+	}
+	
+	public String getIsRecordActive() {
+		return isRecordActive;
+	}
+	public void setIsRecordActive(String isRecordActive) {
+		this.isRecordActive = isRecordActive;
 	}
 	@Override
 	public int hashCode() {
@@ -80,11 +95,15 @@ public class Person {
 			return false;
 		return true;
 	}
+	
 	@Override
 	public String toString() {
 		return "Person [id=" + id + ", name=" + name + ", lastName=" + lastName + ", dob=" + dob + "]";
 	}
 	
-	
+	@PreRemove
+	public void deletePerson() {
+		this.isRecordActive = "N";
+	}
 	
 }

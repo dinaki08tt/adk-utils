@@ -31,8 +31,8 @@ public class PersonController {
 		p.setName("cc");
 		p.setLastName("pp");
 //		personRespository.save(p);
-//		List<Person> persons = personRespository.findAll();
-		List<Person> persons = personRepoCustom.findAllPersons();
+		List<Person> persons = personRespository.findAll();
+//		List<Person> persons = personRepoCustom.findAllPersons();
 		
 		return persons;
 	}
@@ -47,6 +47,15 @@ public class PersonController {
 	public List<Person> findPersonByToday(@PathVariable String dob) {
 		List<Person> persons = personRepoCustom.findPersonByDOB(dob);
 		return persons;
+	}
+	
+	@GetMapping("/persons/del/{name}")
+	public Boolean deletePersonName(@PathVariable String name) {
+		List<Person> persons = personRepoCustom.findPersonByName(name);
+		persons.stream().forEach(p->{
+			personRespository.delete(p);
+		});
+		return true;
 	}
 	
 }
