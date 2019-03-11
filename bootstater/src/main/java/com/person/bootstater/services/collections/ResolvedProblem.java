@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.Scanner;
 import java.util.SortedSet;
 import java.util.TreeSet;
 import java.util.regex.Matcher;
@@ -27,8 +28,11 @@ public class ResolvedProblem {
 	
 //	fibonacciSeries();
 //	evenNumberSeries();
-	oddNumberSeries();
-
+//	oddNumberSeries();
+//	isNotInString();
+	
+//	countOccurance();
+	countOccuranceRegx();
 	}
 
 	public static void findBignSmall() {
@@ -245,6 +249,53 @@ public class ResolvedProblem {
 		.map(t -> t[0])
 		.filter(f -> f < 50)  // control limit to print
 		.forEach(x -> System.out.println(x));
+	}
+	
+	
+	public static void isNotInString() {
+		
+//		Scanner sc = new Scanner(System.in);
+//		String input = sc.nextLine();
+		String input  = "It is a Apple and not a Banana";
+		//input ="I am Brutally honest";
+		System.out.println("Sample Input");
+		System.out.println(input);
+		int in = input.indexOf("is");
+		int inNot = input.indexOf("not");
+		if(in!=-1 && inNot != -1) {
+			System.out.println("true");
+		}else {
+			System.out.println("false");
+		}
+	}
+	
+	public static void countOccurance() {
+		String str = "It is a fruit and notnot a vegetable";
+		String findStr = "not";
+		int lastIndex = 0;
+		int count = 0;
+		while (lastIndex != -1) {
+
+		    lastIndex = str.indexOf(findStr, lastIndex);
+
+		    if (lastIndex != -1) {
+		        count++;
+		        lastIndex += findStr.length();
+		    }
+		}
+		System.out.println(count);
+	}
+	
+	public static void countOccuranceRegx() {
+		String str = "It is a fruit and notnot a vegetable";
+		Pattern p = Pattern.compile("not");
+		Matcher m = p.matcher(str);
+		int count = 0;
+		while (m.find()){
+		    count++;
+		}
+		System.out.println(count);
+		
 	}
 	
 }
