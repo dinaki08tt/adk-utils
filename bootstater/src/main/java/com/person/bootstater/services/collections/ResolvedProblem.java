@@ -295,7 +295,6 @@ public class ResolvedProblem {
 		    count++;
 		}
 		System.out.println(count);
-		
 	}
 	
 }
