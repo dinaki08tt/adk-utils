@@ -1,0 +1,9 @@
+Class diagram
+Object diagram
+Use case diagram
+Sequence diagram
+Collaboration diagram
+Activity diagram
+Statechart diagram
+Deployment diagram
+Component diagram
