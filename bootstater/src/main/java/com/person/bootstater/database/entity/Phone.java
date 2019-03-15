@@ -4,12 +4,16 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 @Entity
 public class Phone {
     @Id
     private long id;
     private String number;
     private String type;
+    
+    @JsonManagedReference
     @ManyToOne
     Professor employee;
     

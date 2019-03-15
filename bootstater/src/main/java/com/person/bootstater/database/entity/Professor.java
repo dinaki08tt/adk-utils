@@ -1,5 +1,6 @@
 package com.person.bootstater.database.entity;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
@@ -19,10 +20,14 @@ import org.hibernate.annotations.ResultCheckStyle;
 import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.Where;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
+@SuppressWarnings("serial")
 @Entity
 @SQLDelete(sql = "UPDATE Professor SET deleted = true WHERE id = ?", check = ResultCheckStyle.COUNT)
 @Where(clause = "deleted <> true")
-public class Professor {
+public class Professor implements Serializable {
     @Id
     private int id;
     private String name;
@@ -53,19 +58,24 @@ public class Professor {
 
 	@OneToOne(cascade = CascadeType.ALL)
     private Address address;
-    
+	
+	@JsonBackReference
     @OneToMany(mappedBy="employee")
     private Collection<Phone> phones = new ArrayList<Phone>();
     
+	@JsonManagedReference
 	@ManyToOne(cascade = CascadeType.ALL)
     private Department department;
     
+	//@JsonManagedReference
     @ManyToOne
     private Professor manager;
     
+	//@JsonBackReference
     @OneToMany(mappedBy="manager")
     private Collection<Professor> directs = new ArrayList<Professor>();
     
+	//@JsonBackReference
     @ManyToMany(mappedBy="employees")
     private Collection<Project> projects = new ArrayList<Project>();
 

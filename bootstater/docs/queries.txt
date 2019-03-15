@@ -1,0 +1,6 @@
+SELECT p.id, p.name, d.name,a.city,a.state,a.street,a.zip, p1.number FROM PROFESSOR  p join address a 
+on p.address_id=a.id
+join department d
+on p.department_id=d.id
+left outer join phone p1
+on p.id=p1.employee_id

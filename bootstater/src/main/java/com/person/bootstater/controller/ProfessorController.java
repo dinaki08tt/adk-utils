@@ -4,6 +4,7 @@ import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -11,9 +12,11 @@ import org.springframework.web.bind.annotation.RestController;
 import com.person.bootstater.database.dao.ProfessorRepository;
 import com.person.bootstater.database.entity.Address;
 import com.person.bootstater.database.entity.Professor;
+import com.person.bootstater.services.professor.ProfessorService;
 
 @RestController
 @RequestMapping("/api/professor")
+@CrossOrigin(origins = "http://localhost:8080")
 public class ProfessorController {
 	private Integer index = 0;
 	private Integer departmentIndex = 0;
@@ -21,11 +24,16 @@ public class ProfessorController {
 	@Autowired
 	private ProfessorRepository professorRespository;
 	
+	@Autowired
+	private ProfessorService professorService;
 
 	@GetMapping("/all")
-	public List<Professor> findProfessors() {
-		loadDefaultsProfessors();
-		List<Professor> professors = professorRespository.findAll();
+	public List<com.person.bootstater.services.professor.model.Professor> findProfessors() {
+//		loadDefaultsProfessors();
+//		List<Professor> professors = professorRespository.findAll();
+	
+		List<com.person.bootstater.services.professor.model.Professor> professors = professorService.getAllProfessors();
+		
 		return professors;
 	}
 

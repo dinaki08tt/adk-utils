@@ -11,24 +11,31 @@ insert into person (dob, last_name, name, id, is_Record_Active) values (TIMESTAM
 insert into person (dob, last_name, name, id, is_Record_Active) values (TIMESTAMP '1997-01-31 10:00:00', 'pummbha', 'sucha', 3, 'Y');
 insert into person (dob, last_name, name, id, is_Record_Active) values (TIMESTAMP '2002-07-31 10:00:00', 'kadambha', 'lucha', 4, 'Y');
 
+insert into project (id,name) values (001,'HDFC BANK');
+insert into project (id,name) values (002,'ICICI BANK');
+insert into project (id,name) values (003,'INDIAN BANK');
+insert into project (id,name) values (004,'SBI Bank');
+insert into project (id,name) values (005,'KVB');
+insert into project (id,name) values (006,'IOB');
+insert into project (id,name) values (007,'Bank of Baroda');
 
-insert into ADDRESS (ID,CITY,DELETED,STATE,STREET,ZIP) values (001,'Kochi',0,'Kerala','Alagar st',741103);
-insert into ADDRESS (ID,CITY,DELETED,STATE,STREET,ZIP) values (002,'Renugunda',0,'Andhra','Thillai st',541103);
-insert into ADDRESS (ID,CITY,DELETED,STATE,STREET,ZIP) values (003,'Aurangabad',0,'Maharashtra','Thakre st',241103);
-insert into ADDRESS (ID,CITY,DELETED,STATE,STREET,ZIP) values (004,'Silluguri',0,'West Bengal','Nanasab st',331103);
-insert into ADDRESS (ID,CITY,DELETED,STATE,STREET,ZIP) values (005,'Jaipur',0,'Rajesthan','kanup st',554103);
-insert into ADDRESS (ID,CITY,DELETED,STATE,STREET,ZIP) values (006,'Sillong',0,'Assam','Ruble st', 84103);
-insert into ADDRESS (ID,CITY,DELETED,STATE,STREET,ZIP) values (007,'Jamsedpur',0,'Bihar','Kaur st', 86703);
+insert into address (ID,CITY,DELETED,STATE,STREET,ZIP) values (1,'Coimbatore',0,'TN','thoonga street',641103);
+insert into address (ID,CITY,DELETED,STATE,STREET,ZIP) values (2,'Chennai',0,'TN','POONGA street',600234);
+insert into address (ID,CITY,DELETED,STATE,STREET,ZIP) values (3,'mumbai',0,'MH','Raja street',234567);
+insert into address (ID,CITY,DELETED,STATE,STREET,ZIP) values (4,'kochi',0,'KL','Roj street',125678);
+insert into address (ID,CITY,DELETED,STATE,STREET,ZIP) values (5,'Coimbatore',0,'TN','krishna street',641103);
+
+insert into department (id,name) values (01,'CLERICAL');
+insert into department (id,name) values (02,'LOAN');
+insert into department (id,name) values (03,'NRI');
+insert into department (id,name) values (04,'DEPOSIT');
+insert into department (id,name) values (05,'INSURANCE');
+
+insert into professor (ID,DELETED,NAME,SALARY,START_DATE,ADDRESS_ID,DEPARTMENT_ID,MANAGER_ID) values(01,0,'Spider Dragon',10000,'2016-10-25',1,1,null);
+insert into professor (ID,DELETED,NAME,SALARY,START_DATE,ADDRESS_ID,DEPARTMENT_ID,MANAGER_ID) values(04,0,'lummbha',10000,'2016-10-25',1,1,01);
+insert into professor (ID,DELETED,NAME,SALARY,START_DATE,ADDRESS_ID,DEPARTMENT_ID,MANAGER_ID) values(02,0,'mummbha',20000,'2016-07-12',2,2,01);
+insert into professor (ID,DELETED,NAME,SALARY,START_DATE,ADDRESS_ID,DEPARTMENT_ID,MANAGER_ID) values(03,0,'kummbha',30000,'2016-09-27',3,3,01);
 
 
-insert into PROFESSOR (ID,DELETED,NAME,SALARY,START_DATE,ADDRESS_ID,DEPARTMENT_ID,MANAGER_ID) values (001, 0,'kila',5000,'2019-02-01',1,null,null);
-insert into PROFESSOR (ID,DELETED,NAME,SALARY,START_DATE,ADDRESS_ID,DEPARTMENT_ID,MANAGER_ID) values (002, 0,'jila',8000,'2019-03-01',2,null,null);
-insert into PROFESSOR (ID,DELETED,NAME,SALARY,START_DATE,ADDRESS_ID,DEPARTMENT_ID,MANAGER_ID) values (003, 0,'kulla',8500,'2019-03-01',3,null,null);
-insert into PROFESSOR (ID,DELETED,NAME,SALARY,START_DATE,ADDRESS_ID,DEPARTMENT_ID,MANAGER_ID) values (004, 0,'kachi',5600,'2019-03-01',4,null,null);
-insert into PROFESSOR (ID,DELETED,NAME,SALARY,START_DATE,ADDRESS_ID,DEPARTMENT_ID,MANAGER_ID) values (005, 0,'banchi',9000,'2019-03-01',5,null,null);
-insert into PROFESSOR (ID,DELETED,NAME,SALARY,START_DATE,ADDRESS_ID,DEPARTMENT_ID,MANAGER_ID) values (006, 0,'lonchi',12000,'2019-03-01',6,null,null);
-insert into PROFESSOR (ID,DELETED,NAME,SALARY,START_DATE,ADDRESS_ID,DEPARTMENT_ID,MANAGER_ID) values (007, 0,'banga',12000,'2019-05-09',null,null,null);
-
-insert into PHONE (ID,NUMBER,TYPE,EMPLOYEE_ID) values (001,987563482,'Home',1);
-insert into PHONE (ID,NUMBER,TYPE,EMPLOYEE_ID) values (002,987233482,'Work',1);
-insert into PHONE (ID,NUMBER,TYPE,EMPLOYEE_ID) values (003,6787233482,'Guest House',1);
+insert into phone (ID,NUMBER,TYPE,EMPLOYEE_ID) values (1,9098988345,'Work',01);
+insert into phone (ID,NUMBER,TYPE,EMPLOYEE_ID) values (2,8998988376,'Home',01);

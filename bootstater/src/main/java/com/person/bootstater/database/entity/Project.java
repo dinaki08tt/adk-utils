@@ -8,12 +8,16 @@ import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.ManyToMany;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 @Entity
 @Inheritance
 public class Project {
     @Id
     protected int id;
     protected String name;
+    
+    //@JsonBackReference
     @ManyToMany
     protected Collection<Professor> employees = new ArrayList<Professor>();
     
