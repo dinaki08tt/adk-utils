@@ -1,0 +1,2 @@
+Interceptors are used to implement cross-cutting concerns, such as logging, auditing, and security, from the business logic.
+Filters is used to carry on operation "negation based on constrain" in the WebContext.
