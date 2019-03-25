@@ -5,16 +5,18 @@ Creational, Structural and Behavioral patterns & J2EE Patterns.
 3. Singleton Pattern
 4. Builder Pattern | 
 5. Prototype Pattern | for Cache in Hashtable
+Structural patterns
 6. Adapter Pattern
 7. Bridge Pattern
 8. Filter Pattern
 9. Composite Pattern | tree structure | maintain hierarchy
-10. Decorator Pattern | appends to the object without modifying
+10. Decorator Pattern | appends to the object without modifying, decorator class created with extending A class
 11. Facade Pattern | hides complex logic and expose as Interface (methods)
-12. Flyweight Pattern
-13. Proxy Pattern
+12. Flyweight Pattern | resuse of already existing object by caching in HashMap in FactoryClass
+13. Proxy Pattern |
 14. Chain of Responsibility pattern
 15. Command Pattern
+Behavioral patterns
 16. Interpreter Pattern
 17. Iterator Pattern
 18. Mediator Pattern
@@ -22,14 +24,14 @@ Creational, Structural and Behavioral patterns & J2EE Patterns.
 20. Observer Pattern
 21. State Pattern
 22. Null Object Pattern
-23. Statergy Pattern
+23. Strategy Pattern
 24. Template Pattern
-25. Visitor Pattern
+25. Visitor Pattern | accepts visitor object which acts upon the element 
 26. MVC Pattern
-27. Business Delegate Pattern
-28. Composite Entity Pattern
-29. Data Access Object Pattern
+27. Business Delegate Pattern | Entry point service class
+28. Composite Entity Pattern | Grouping multiple data objects with Composing class
+29. Data Access Object Pattern	| CRUD methods in one Class with DB related objects
 30. Front End Controller Pattern
 31. Intercepting Filter Pattern
-32. Service Locator Pattern
-33. Transfer Object Pattern
+32. Service Locator Pattern | JNDI lookups
+33. Transfer Object Pattern | POJOs i.e Database Entites
