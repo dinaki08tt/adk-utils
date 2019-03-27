@@ -1,26 +1,15 @@
 package com.person.bootstater.services.compress;
 
-import java.io.BufferedInputStream;
 import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.nio.file.FileSystem;
-import java.nio.file.FileSystems;
-import java.nio.file.Files;
-import java.nio.file.Path;
 import java.util.ArrayList;
-import java.util.Enumeration;
 import java.util.List;
-import java.util.zip.ZipEntry;
-import java.util.zip.ZipFile;
 
 import net.lingala.zip4j.exception.ZipException;
 import net.lingala.zip4j.model.FileHeader;
 import net.lingala.zip4j.model.ZipParameters;
 import net.lingala.zip4j.util.Zip4jConstants;
  
-public class CreatePasswordProtectedZipExample
+public class ProtectedCompressFile
 {
 	
     private static final String PASS = "threeidiots27";
@@ -41,7 +30,7 @@ public class CreatePasswordProtectedZipExample
               
              //Add files to be archived into zip file
              ArrayList<File> filesToAdd = new ArrayList<File>();
-             filesToAdd.add(new File("D:\\zipFolder\\bk.html")); //zip file content
+             filesToAdd.add(new File("/culprateseverywhere/bk.html")); //zip file content
               
              ZipParameters parameters = zipParameters();
               
