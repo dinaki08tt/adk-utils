@@ -39,3 +39,11 @@ insert into professor (ID,DELETED,NAME,SALARY,START_DATE,ADDRESS_ID,DEPARTMENT_I
 
 insert into phone (ID,NUMBER,TYPE,EMPLOYEE_ID) values (1,9098988345,'Work',01);
 insert into phone (ID,NUMBER,TYPE,EMPLOYEE_ID) values (2,8998988376,'Home',01);
+
+
+select top 1 * from professor p join 
+(SELECT max(p.start_date) as start_date FROM PROFESSOR p) p1 on p.start_date=p1.start_date
+JOIN  ADDRESS a on p.ADDRESS_ID = a.ID 
+where a.STATE='TN' order by p.id desc;
+
+
