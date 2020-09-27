@@ -23,8 +23,8 @@ public class ResolvedProblem {
 	//regexMatches();
 	//countChars();
 	//cntChars();
-	//isPalindromeString();
-	//isPalindrome(); //using SringBuilder
+	isPalindromeString();
+	isPalindrome(); //using SringBuilder
 	
 //	fibonacciSeries();
 //	evenNumberSeries();
@@ -32,7 +32,7 @@ public class ResolvedProblem {
 //	isNotInString();
 	
 //	countOccurance();
-	countOccuranceRegx();
+	//countOccuranceRegx();
 	}
 
 	public static void findBignSmall() {
@@ -163,7 +163,9 @@ public class ResolvedProblem {
 //		redivider, deified, civic, radar, level, rotor, kayak, reviver, racecar, redder, madam, and refer.	
 		String str, rev = "";
 		str = "racecar";
+		str = "\u0BB5\u0BBF\u0B95\u0B9F\u0B95\u0BB5\u0BBF";
 		
+		System.out.println(str);
 //		Scanner to get string inputs from CommandLine
 //	    Scanner sc = new Scanner(System.in);
 //	    System.out.println("Enter a string:");
@@ -186,7 +188,8 @@ public class ResolvedProblem {
 	 */
 	public static void isPalindrome(){
 		String str = "radar";
-	    StringBuffer sbf = new StringBuffer(str);
+		str = "\u0BB5\u0BBF\u0B95\u0B9F\u0B95\u0BB5\u0BBF";
+		StringBuffer sbf = new StringBuffer(str);
 		StringBuilder sb=new StringBuilder(str);  
 	    sb.reverse();
 	    sbf.reverse();
