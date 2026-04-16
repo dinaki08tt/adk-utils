@@ -1,0 +1,52 @@
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 
+                              https://maven.apache.org/xsd/settings-1.0.0.xsd">
+
+  <!-- Path to your local repository where dependencies are stored -->
+<localRepository>C:/Users/dineshkrishnan.a/Documents/Softwares/mvnRepo/repository</localRepository>
+  <!-- Interactive mode (true/false) for user input prompts -->
+  <interactiveMode>true</interactiveMode>
+
+  <!-- Offline mode: set to true if you have no internet access -->
+  <offline>false</offline>
+
+  <!-- Authentication for remote servers (e.g., Nexus, Artifactory, GitHub) -->
+<!--   <servers> -->
+<!--     <server> -->
+<!--       <id>my-repository-id</id> -->
+<!--       <username>your-username</username> -->
+<!--       <password>your-password</password> -->
+<!--     </server> -->
+<!--   </servers> -->
+
+  <!-- Mirrors for redirecting repository requests -->
+<!--   <mirrors> -->
+<!--     <mirror> -->
+<!--       <id>central-mirror</id> -->
+<!--       <name>Maven Central Mirror</name> -->
+<!--       <url>https://apache.org</url> -->
+<!--       <mirrorOf>central</mirrorOf> -->
+<!--     </mirror> -->
+<!--   </mirrors> -->
+
+  <!-- Environmental profiles for custom repositories or properties -->
+  <profiles>
+    		<profile>
+			<id>maven-profile</id>
+			<repositories>
+				<repository>
+					<id>repo1</id>
+					<name>maven central</name>
+					<url>https://repo1.maven.org/maven2/</url>
+				</repository>
+
+			</repositories>
+		</profile>
+  </profiles>
+
+  <!-- Activate specific profiles by default -->
+  <activeProfiles>
+    <activeProfile>maven-profile</activeProfile>
+  </activeProfiles>
+</settings>
