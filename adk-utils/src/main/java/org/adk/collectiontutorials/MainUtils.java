@@ -1,10 +1,5 @@
 package org.adk.collectiontutorials;
 
-/**
- * 
- * @author dineshkrishnan.a
- *
- */
 public class MainUtils {
 
 	public static void main(String[] args) {
